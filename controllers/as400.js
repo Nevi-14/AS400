@@ -18,8 +18,8 @@ exports.as400Testing =   (req, resp)=>{
 
 async function callData(){
     let time = new Date();
-    const usuarios = await pool.query('SELECT  * FROM  AS400 ');
-    //console.log(typeof(usuarios))
+    const data = await pool.query('SELECT  * FROM  AS400 ');
+    //console.log(typeof(data))
    
     return usuarios;
   
