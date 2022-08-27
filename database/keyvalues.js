@@ -6,8 +6,8 @@ module.exports = {
         connectionLimit: 10,
         host: 'localhost', // host de donde esta la base de datos
         user: 'root',
-        password: '',
-        database: 'dev_coding'
+        password: 'T4z4dec4fe*',
+        database: 'nagios'
     }
 
 };

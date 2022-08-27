@@ -6,14 +6,13 @@ require("appdynamics").profile({
   controllerSslEnabled: true,
   accountName: 'lombard202208240941176',
   accountAccessKey: '7hfkv798naai',
-  applicationName: 'TEST_LOCAL',
-  tierName: 'TEST_LOCAL',
+  applicationName: 'AS400',
+  tierName: 'AS400',
   nodeName: 'process' // The controller will automatically append the node name with a unique number
  });
 const express =   require('express'),
       app     =   express();
       require('dotenv').config()    
-      const { database } = require('./database/keyvalues');
 app.use('/',require('./routes/as400'))
 
       const PORT  = process.env.PORT || 3000

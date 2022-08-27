@@ -1,24 +1,27 @@
-
 require('dotenv').config()  
 const pool = require('../database/connection');
-exports.as400Production = (req, resp)=>{
-    callData();
-    resp.send('production');
+exports.as400Production = async (req, resp)=>{
+    callData().then(data =>{
+      //  console.log(data, 'queyryy')
+        resp.send(data);
+    })
+ 
 };
 
 exports.as400Testing =   (req, resp)=>{
+    callData().then(data =>{
+        resp.send(data);
+    })
 
-    callData();
-    resp.send('test');
 };
 
 
 async function callData(){
     let time = new Date();
-    const usuarios = await pool.query('SELECT  * FROM  users ');
-    console.log('printing data ' + time.toLocaleTimeString())
-    data = usuarios;
-      console.log(usuarios)
+    const usuarios = await pool.query('SELECT  * FROM  AS400 ');
+    //console.log(typeof(usuarios))
+   
+    return usuarios;
   
 
 }
